@@ -1,8 +1,8 @@
 export default class StationEntity
 {
-    constructor(stationAPI)
+    constructor(idx, stationAPI)
     {
-        this.id = stationAPI.addr;
+        this.id = idx;
         this.addr = stationAPI.addr;
         this.lat = stationAPI.lat;
         this.lng = stationAPI.lng;

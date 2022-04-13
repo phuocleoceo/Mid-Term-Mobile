@@ -22,10 +22,10 @@ export default function useStation()
     const Get_Station_From_API = async () =>
     {
         const { data: station_api } = await GET_STATION_API();
-        station_api.forEach(stationAPI =>
+        station_api.forEach((idx, stationAPI) =>
         {
             // Lỗi ở dòng này dù ở project khác nó vẫn hoạt động tốt
-            StationContext.create(new StationEntity(stationAPI));
+            StationContext.create(new StationEntity(idx, stationAPI));
         });
         dispatch(SET_LIST_STATION(await StationContext.query()));
     }
